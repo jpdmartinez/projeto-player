@@ -50,7 +50,9 @@ class Player {
     }
 
     public function coletarItem(Item $item) {
+        
         $this->inventario->adicionar($item);
+        
     }
 
     public function soltarItem(Item $item) {

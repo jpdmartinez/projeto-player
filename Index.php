@@ -8,7 +8,6 @@ require_once('./class/Defesa.php');
 require_once('./class/Magia.php');
 
 //Itens de Ataque
-
 $item1 = new Ataque('Espada Longa');
 $item2 = new Ataque('Machado de batalha');
 $item3 = new Ataque('Espada curta');
@@ -18,9 +17,7 @@ $item6 = new Ataque('Adaga afiada');
 $item7 = new Ataque('Clava');
 $item8 = new Ataque('Machado de guerra');
 
-
 //Itens de Defesa
-
 $item9 = new Defesa('Armadura de couro');
 $item10 = new Defesa('Escudo');
 $item11 = new Defesa('Armadura de ferro');
@@ -30,9 +27,7 @@ $item14 = new Defesa('Escudo de madeira');
 $item15 = new Defesa('Botas resistentes');
 $item16 = new Defesa('Escudo de ferro');
 
-
 //Itens de Magia
-
 $item17 = new Magia('Grimório');
 $item18 = new Magia('Poção de mana');
 $item19 = new Magia('Pergaminho de fogo');
@@ -42,19 +37,11 @@ $item22 = new Magia('Bastão do mago');
 $item23 = new Magia('Orbe de luz');
 $item6 = new Magia('Poção de vida');
 
-
-//Criação de inventários 
-$inventarioMago = new Inventario();
-$inventarioBarbaro = new Inventario();
-$inventarioBardo = new Inventario();
-$inventarioRanger = new Inventario();
-
 //Criação de personagens 
-$mago = new Player("Elrond", 1, $inventarioMago);
-$barbaro = new Player ("Kruk", 1, $inventarioBarbaro);
-$bardo = new Player ("Lyra", 1, $inventarioBardo);
-$ranger = new Player ("Thorne", 1, $inventarioRanger);
-
+$mago = new Player("Elrond");
+$barbaro = new Player ("Kruk");
+$bardo = new Player ("Lyra");
+$ranger = new Player ("Thorne");
 
 echo "{$mago->getNickname()}<br>";
 $mago->coletarItem($item17);
@@ -63,9 +50,9 @@ $mago->coletarItem($item23);
 $mago->coletarItem($item13);
 $mago->coletarItem($item6);
 $mago->soltarItem($item23);
-$inventarioMago->capacidadeLivre();
+$mago->getInventario()->capacidadeLivre();
 $mago->subirNivel();
-$inventarioMago->capacidadeLivre();
+$mago->getInventario()->capacidadeLivre();
 
 echo "<hr>";
 
@@ -75,8 +62,7 @@ $barbaro->coletarItem($item5);
 $barbaro->coletarItem($item7);
 $barbaro->soltarItem($item5);
 $barbaro->coletarItem($item7);
-$inventarioBarbaro->capacidadeLivre();
-
+$barbaro->getInventario()->capacidadeLivre();
 
 echo "<hr>";
 
@@ -86,14 +72,14 @@ $bardo->coletarItem($item13);
 $bardo->coletarItem($item15);
 $bardo->coletarItem($item6);
 $bardo->subirNivel();
-$inventarioBardo->capacidadeLivre();
+$bardo->getInventario()->capacidadeLivre();
 $bardo->subirNivel();
-$inventarioBardo->capacidadeLivre();
+$bardo->getInventario()->capacidadeLivre();
 echo "<hr>";
 
 echo "{$ranger->getNickname()}<br>";
 $ranger->coletarItem($item4);
 $ranger->coletarItem($item11);
 $ranger->coletarItem($item3);
-$inventarioRanger->capacidadeLivre();
+$ranger->getInventario()->capacidadeLivre();
 echo "<hr>";

@@ -11,10 +11,10 @@ class Player {
     private int $nivel;
     private Inventario $inventario;
 
-    public function __construct(string $nickname, int $nivel, Inventario $inventario) {
+    public function __construct(string $nickname) {
         $this->setNickname($nickname);
-        $this->setNivel($nivel);
-        $this->setInventario($inventario);
+        $this->setNivel(1);
+        $this->inventario = new inventario();
     }
 
     public function setNickname(string $nickname): void {
@@ -39,10 +39,6 @@ class Player {
 
     public function GetNivel(): int {
         return $this->nivel;
-    }
-
-    public function setInventario(Inventario $inventario){
-        $this->inventario = $inventario;
     }
 
     public function getInventario(){

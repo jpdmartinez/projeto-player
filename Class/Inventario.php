@@ -10,8 +10,8 @@ class Inventario {
     private int $capacidadeMaxima;
     private array $itens = [];
 
-    public function __construct(int $capacidadeMaxima) {
-        $this->setCapacidadeMaxima($capacidadeMaxima);
+    public function __construct() {
+        $this->setCapacidadeMaxima(20);
     }
 
     public function setCapacidadeMaxima($capacidadeMaxima): void {

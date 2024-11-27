@@ -44,10 +44,10 @@ $item6 = new Magia('Poção de vida');
 
 
 //Criação de inventários 
-$inventarioMago = new Inventario(20);
-$inventarioBarbaro = new Inventario(20);
-$inventarioBardo = new Inventario(20);
-$inventarioRanger = new Inventario(20);
+$inventarioMago = new Inventario();
+$inventarioBarbaro = new Inventario();
+$inventarioBardo = new Inventario();
+$inventarioRanger = new Inventario();
 
 //Criação de personagens 
 $mago = new Player("Elrond", 1, $inventarioMago);
@@ -63,6 +63,7 @@ $mago->coletarItem($item23);
 $mago->coletarItem($item13);
 $mago->coletarItem($item6);
 $mago->soltarItem($item23);
+$inventarioMago->capacidadeLivre();
 $mago->subirNivel();
 $inventarioMago->capacidadeLivre();
 
